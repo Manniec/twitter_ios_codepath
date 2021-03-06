@@ -16,20 +16,39 @@
                     <view key="view" contentMode="scaleToFill" id="6cB-3h-tRb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jo-AM-pvr">
+                                <rect key="frame" x="134.5" y="306.5" width="106" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="lc1-ZB-jBc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="o7W-4d-f2H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XSI-GU-edh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Jo-AM-pvr" firstAttribute="centerY" secondItem="6cB-3h-tRb" secondAttribute="centerY" id="21y-yj-rUC"/>
+                            <constraint firstItem="4Jo-AM-pvr" firstAttribute="centerX" secondItem="6cB-3h-tRb" secondAttribute="centerX" id="bin-gs-2CB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="5Vo-0c-2Y1" kind="presentation" identifier="loginToHome" id="0fT-Oc-dXR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgH-7R-dCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="77"/>
+            <point key="canvasLocation" x="197.59999999999999" y="76.911544227886068"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="IO5-Sj-qpb">
             <objects>
                 <tableViewController id="UQ6-MI-oac" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9mc-NC-d8H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -58,7 +77,7 @@
             <objects>
                 <navigationController id="5Vo-0c-2Y1" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5zv-u7-Nh4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -71,6 +90,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
