@@ -18,7 +18,7 @@ class HomeTableViewController: UITableViewController {
     
     //For displaying tweet cells (in addition to sections)
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
         return cell
     }
     
