@@ -59,6 +59,13 @@ class HomeTableViewController: UITableViewController {
         })
         
     }
+    
+    //Call loadMoreTweets when you get to end of page
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == tweetArray.count{
+            loadMoreTweets()
+        }
+    }
 
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout() //this logs you out
