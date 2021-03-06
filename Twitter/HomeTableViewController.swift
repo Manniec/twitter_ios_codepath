@@ -30,7 +30,7 @@ class HomeTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData() //Make sure to reload data with new tweets params when you call to api
-            
+            self.myRefreashControl.endRefreshing() //need to end refreash or else spinning loading bar forever
         }, failure: { (Error) in
             print("Could not load tweets")
         })
