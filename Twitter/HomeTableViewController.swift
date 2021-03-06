@@ -17,10 +17,12 @@ class HomeTableViewController: UITableViewController {
     //For Refreshing tweets on pull
     let myRefreashControl = UIRefreshControl()
     
-    @objc func loadTweet(){ //function for reloading tweets from api
+    @objc func loadTweets(){ //function for reloading tweets from api
+        
+        numberOfTweets = 20
         
         let tweetsUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let myParams = ["count":10]
+        let myParams = ["count":numberOfTweets]
         
         self.tweetArray.removeAll() //clear tweets before reloading
         
@@ -34,6 +36,28 @@ class HomeTableViewController: UITableViewController {
         }, failure: { (Error) in
             print("Could not load tweets")
         })
+    }
+    
+    func loadMoreTweets(){
+        
+        numberOfTweets = numberOfTweets + 20 //add 20 to number of tweets whenever you need to load more
+        
+        //same url as load tweets
+        let tweetsUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        
+        let myParams = ["count":numberOfTweets]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: tweetsUrl, parameters: myParams, success: { (tweets:[NSDictionary]) in
+            for tweet in tweets{
+                self.tweetArray.append(tweet)
+            }
+            
+            self.tableView.reloadData() //Make sure to reload data with new tweets params when you call to api
+            self.myRefreashControl.endRefreshing() //need to end refreash or else spinning loading bar forever
+        }, failure: { (Error) in
+            print("Could not load tweets")
+        })
+        
     }
 
     @IBAction func onLogout(_ sender: Any) {
@@ -66,9 +90,9 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweet() // you fill tweetArray when you load page
+        loadTweets() // you fill tweetArray when you load page
         
-        myRefreashControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        myRefreashControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreashControl
     }
 
