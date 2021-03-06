@@ -12,7 +12,7 @@ The following **required** functionality is completed:
 - [X] User can log in. (1pt)
 - [X] User can log out. (1pt)
 - [X] User stays logged in across restarts. (1pt)
-- [ ] User can view tweets with the user profile picture, username, and tweet text. (6pts)
+- [X] User can view tweets with the user profile picture, username, and tweet text. (6pts)
 
 The following **bonus** features are implemented:
 
@@ -23,5 +23,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/EsfSU56.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/IcBF1FL.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
