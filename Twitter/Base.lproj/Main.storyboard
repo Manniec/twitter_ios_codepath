@@ -72,6 +72,9 @@
                     <navigationItem key="navigationItem" title="Home" id="zZw-uK-Mx6">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="68U-nd-N3z">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="UQ6-MI-oac" id="f6c-Tl-J0I"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
