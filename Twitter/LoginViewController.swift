@@ -10,6 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBAction func onLoginButton(_ sender: Any) {
+        let oauthTokenURL = "https://api.twitter.com/oauth/request_token"
+        TwitterAPICaller.client?.login(url: oauthTokenURL, success: <#T##() -> ()#>, failure: <#T##(Error) -> ()#>)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
