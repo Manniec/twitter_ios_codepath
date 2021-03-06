@@ -46,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="197.59999999999999" y="76.911544227886068"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="IO5-Sj-qpb">
             <objects>
                 <tableViewController id="UQ6-MI-oac" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                             <outlet property="delegate" destination="UQ6-MI-oac" id="RBf-7n-X06"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="zZw-uK-Mx6"/>
+                    <navigationItem key="navigationItem" title="Home" id="zZw-uK-Mx6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2N4-GL-wgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +82,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5zv-u7-Nh4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12641191928032636" green="0.62280517647143152" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="UQ6-MI-oac" kind="relationship" relationship="rootViewController" id="JL1-8H-RPV"/>
