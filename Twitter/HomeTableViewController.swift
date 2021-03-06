@@ -9,6 +9,10 @@
 import UIKit
 
 class HomeTableViewController: UITableViewController {
+    
+    //Create dictionary to store tweets in
+    var tweetArray = [NSDictionary]()
+    var numberOfTweets : Int!
 
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout() //this logs you out
@@ -19,6 +23,11 @@ class HomeTableViewController: UITableViewController {
     //For displaying tweet cells (in addition to sections)
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
+        //casting cell as type TweetCellTableViewCell gives u access to the linked outlets
+        cell.userNameLabel.text = "Some Name"
+        cell.tweetContent.text = "Something"
+        
+        
         return cell
     }
     
