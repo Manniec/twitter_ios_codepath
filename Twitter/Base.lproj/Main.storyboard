@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-jy-WdN">
+                                <rect key="frame" x="87.5" y="152.5" width="200" height="200"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jo-AM-pvr" userLabel="LoginButton">
-                                <rect key="frame" x="134.5" y="306.5" width="106" height="54"/>
+                                <rect key="frame" x="134.5" y="360.5" width="106" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="lc1-ZB-jBc"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="o7W-4d-f2H"/>
@@ -36,8 +39,10 @@
                         <viewLayoutGuide key="safeArea" id="XSI-GU-edh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Jo-AM-pvr" firstAttribute="centerY" secondItem="6cB-3h-tRb" secondAttribute="centerY" id="21y-yj-rUC"/>
-                            <constraint firstItem="4Jo-AM-pvr" firstAttribute="centerX" secondItem="6cB-3h-tRb" secondAttribute="centerX" id="bin-gs-2CB"/>
+                            <constraint firstItem="j4P-jy-WdN" firstAttribute="centerY" secondItem="6cB-3h-tRb" secondAttribute="centerY" constant="-81" id="7U5-Fb-WbG"/>
+                            <constraint firstItem="j4P-jy-WdN" firstAttribute="centerX" secondItem="6cB-3h-tRb" secondAttribute="centerX" id="SsW-Mq-mur"/>
+                            <constraint firstItem="4Jo-AM-pvr" firstAttribute="top" secondItem="j4P-jy-WdN" secondAttribute="bottom" constant="8" symbolic="YES" id="e1M-Sx-T0P"/>
+                            <constraint firstItem="4Jo-AM-pvr" firstAttribute="centerX" secondItem="6cB-3h-tRb" secondAttribute="centerX" id="xJV-sK-11t"/>
                         </constraints>
                     </view>
                     <connections>
@@ -57,28 +62,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="125" id="bcp-9u-HWi" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="125" id="bcp-9u-HWi" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bcp-9u-HWi" id="mVl-6h-xsy">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZ8-lq-CCA">
-                                            <rect key="frame" x="16" y="11" width="65" height="65"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZ8-lq-CCA">
+                                            <rect key="frame" x="16" y="11" width="60" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="65" id="0Jw-TB-FCe"/>
-                                                <constraint firstAttribute="height" constant="65" id="dfA-zw-Jzv"/>
+                                                <constraint firstAttribute="height" constant="60" id="gzf-aj-SzN"/>
+                                                <constraint firstAttribute="width" constant="60" id="pSR-gu-1gP"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-Uc-B60" userLabel="posterName">
-                                            <rect key="frame" x="89" y="11" width="270" height="21.5"/>
+                                            <rect key="frame" x="84" y="11" width="275" height="21.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyb-H6-RyC" userLabel="tweetContent">
-                                            <rect key="frame" x="89" y="36.5" width="270" height="77.5"/>
+                                            <rect key="frame" x="84" y="36.5" width="275" height="77.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -147,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TwitterLogoBlue" width="200" height="200"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
