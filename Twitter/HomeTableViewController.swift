@@ -25,6 +25,9 @@ class HomeTableViewController: UITableViewController {
             for tweet in tweets{
                 self.tweetArray.append(tweet)
             }
+            
+            self.tableView.reloadData() //Make sure to reload data with new tweets params when you call to api
+            
         }, failure: { (Error) in
             print("Could not load tweets")
         })
@@ -40,8 +43,11 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
         //casting cell as type TweetCellTableViewCell gives u access to the linked outlets
-        cell.userNameLabel.text = "Some Name"
-        cell.tweetContent.text = "Something"
+        
+        let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+        
+        cell.userNameLabel.text = user["name"] as? String
+        cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
         
         
         return cell
@@ -49,7 +55,7 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadTweet() // you fill tweetArray when you load page
     }
 
     // MARK: - Table view data source
@@ -61,7 +67,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return tweetArray.count //return number of loaded/retrieved tweets
     }
 
 
