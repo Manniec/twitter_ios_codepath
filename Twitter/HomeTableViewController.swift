@@ -44,11 +44,19 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
         //casting cell as type TweetCellTableViewCell gives u access to the linked outlets
         
+        //set username and tweet content
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
         
+        //set profile picture
+        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
+        let data = try? Data(contentsOf: imageUrl!)
+        
+        if let imageData = data{
+            cell.profileImageView.image = UIImage(data: imageData)
+        }
         
         return cell
     }
