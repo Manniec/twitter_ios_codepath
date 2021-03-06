@@ -14,7 +14,10 @@ class HomeTableViewController: UITableViewController {
     var tweetArray = [NSDictionary]()
     var numberOfTweets : Int!
     
-    func loadTweet(){
+    //For Refreshing tweets on pull
+    let myRefreashControl = UIRefreshControl()
+    
+    @objc func loadTweet(){ //function for reloading tweets from api
         
         let tweetsUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count":10]
@@ -64,6 +67,9 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweet() // you fill tweetArray when you load page
+        
+        myRefreashControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        tableView.refreshControl = myRefreashControl
     }
 
     // MARK: - Table view data source
