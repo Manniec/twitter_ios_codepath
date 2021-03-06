@@ -13,6 +13,22 @@ class HomeTableViewController: UITableViewController {
     //Create dictionary to store tweets in
     var tweetArray = [NSDictionary]()
     var numberOfTweets : Int!
+    
+    func loadTweet(){
+        
+        let tweetsUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let myParams = ["count":10]
+        
+        self.tweetArray.removeAll() //clear tweets before reloading
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: tweetsUrl, parameters: myParams, success: { (tweets:[NSDictionary]) in
+            for tweet in tweets{
+                self.tweetArray.append(tweet)
+            }
+        }, failure: { (Error) in
+            print("Could not load tweets")
+        })
+    }
 
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout() //this logs you out
