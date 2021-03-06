@@ -11,8 +11,8 @@ import UIKit
 class HomeTableViewController: UITableViewController {
 
     @IBAction func onLogout(_ sender: Any) {
-        TwitterAPICaller.client?.logout()
-        self.dismiss(animated: true, completion: nil)
+        TwitterAPICaller.client?.logout() //this logs you out
+        self.dismiss(animated: true, completion: nil) //this returns you to login page
     }
     
     override func viewDidLoad() {
