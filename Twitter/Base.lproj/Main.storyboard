@@ -69,7 +69,11 @@
                             <outlet property="delegate" destination="UQ6-MI-oac" id="RBf-7n-X06"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="zZw-uK-Mx6"/>
+                    <navigationItem key="navigationItem" title="Home" id="zZw-uK-Mx6">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="68U-nd-N3z">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2N4-GL-wgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
