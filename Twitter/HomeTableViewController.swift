@@ -93,6 +93,9 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
+        //get if tweet is currently favorited or not
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        
         return cell
     }
     
