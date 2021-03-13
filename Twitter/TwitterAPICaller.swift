@@ -63,5 +63,8 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
             failure(error)
         })
     }
+    func postTweet(tweetString:String, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        
+    }
     
 }
