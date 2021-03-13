@@ -16,11 +16,26 @@ class TweetViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var tweetTextView: UITextView!
+    
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tweet(_ sender: Any) {
+        if (!tweetTextView.text.isEmpty){ //check there is any text to post!
+            
+            TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success: {
+                self.dismiss(animated: true, completion: nil)
+            }, failure: { (Error) in
+                print("Error posting tweet \(Error)")
+                //inreality instead of a print statement you would have a pop up display the error, but in this case we just print
+                self.dismiss(animated: true, completion: nil)
+            })
+        }else {
+            //in reality you should display an alert asking for user to type something
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation
