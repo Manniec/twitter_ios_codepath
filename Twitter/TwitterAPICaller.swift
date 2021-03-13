@@ -64,7 +64,9 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
         })
     }
     func postTweet(tweetString:String, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        let url = "https://api.twitter.com/1.1/statuses/update.json"
         
+
     }
     
 }
