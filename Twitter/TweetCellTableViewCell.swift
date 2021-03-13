@@ -19,8 +19,25 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var retweetButton: UIButton!
     
     @IBAction func favoriteTweet(_ sender: Any) {
+        
     }
     @IBAction func retweet(_ sender: Any) {
+    }
+    
+    var favorited:Bool = false //tweets are usually not favorited initially
+    
+    func setFavorite(_ isFavorited:Bool) {
+        //set favorited value by input bool
+        favorited = isFavorited
+        
+        if (favorited){
+            //for favorited true then icon = red
+            favoriteButton.setImage(UIImage(named:"favor-icon-red"), for: UIControl.State.normal)
+        }else{
+            //set favorite icon to grey
+            favoriteButton.setImage(UIImage(named:"favor-icon"), for: UIControl.State.normal)
+        }
+        
     }
     
     override func awakeFromNib() {
