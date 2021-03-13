@@ -98,10 +98,15 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweets() // you fill tweetArray when you load page
+        
         
         myRefreashControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreashControl
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTweets() // you fill tweetArray when you load page
     }
 
     // MARK: - Table view data source
