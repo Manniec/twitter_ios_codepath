@@ -143,10 +143,40 @@
                     <view key="view" contentMode="scaleToFill" id="sgP-nZ-mnE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CRq-1d-3rD">
+                                <rect key="frame" x="0.0" y="44" width="375" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="b5p-0j-zgT"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="75f-v2-FFM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CRq-1d-3rD" firstAttribute="leading" secondItem="75f-v2-FFM" secondAttribute="leading" id="5Og-zx-ovT"/>
+                            <constraint firstItem="CRq-1d-3rD" firstAttribute="top" secondItem="75f-v2-FFM" secondAttribute="top" id="BqM-m2-7QZ"/>
+                            <constraint firstItem="75f-v2-FFM" firstAttribute="trailing" secondItem="CRq-1d-3rD" secondAttribute="trailing" id="rWx-BT-1Xb"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jkJ-da-wgo"/>
+                    <navigationItem key="navigationItem" id="jkJ-da-wgo">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="hNk-Ce-wpv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancel:" destination="agG-Lr-v7V" id="tzY-6s-awY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="xN4-1j-qHN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="tweet:" destination="agG-Lr-v7V" id="R40-LP-b57"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wuw-pS-O1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,14 +204,15 @@
             </objects>
             <point key="canvasLocation" x="930" y="77"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tweet Navigation Controller-->
         <scene sceneID="RpA-oI-f8D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hHB-st-gQV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hHB-st-gQV" userLabel="Tweet Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dID-OU-oc2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16599074010000001" green="0.62579649690000005" blue="0.97400230170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
