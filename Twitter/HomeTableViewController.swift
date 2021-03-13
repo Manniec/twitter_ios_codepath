@@ -95,6 +95,7 @@ class HomeTableViewController: UITableViewController {
         
         //get if tweet is currently favorited or not
         cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         
         return cell
     }
