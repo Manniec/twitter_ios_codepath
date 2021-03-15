@@ -41,6 +41,8 @@ class TweetCellTableViewCell: UITableViewCell {
     
     var tweetId: Int = -1 //set to initial negative number to represent invalid =tweetID
     
+    var retweeted:Bool = false 
+    
     func setFavorite(_ isFavorited:Bool) {
         //set favorited value by input bool
         favorited = isFavorited
